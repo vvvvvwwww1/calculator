@@ -1,0 +1,47 @@
+from math import sqrt
+
+def mult(lvalue, rvalue):
+    return lvalue * rvalue
+    
+def div(lvalue, rvalue):
+    if rvalue == 0: 
+        print("Нельзя!")
+    else:
+        return lvalue / rvalue
+        
+def plus(lvalue, rvalue):
+    return lvalue + rvalue
+    
+def minus(lvalue, rvalue):
+    return lvalue - rvalue
+
+def factorial(lvalue):
+    result = 1
+    for i in range(1, lvalue + 1):
+        result = i * result
+    return result
+
+a = int(input("a = ?"))
+znak = str(input("znak = ?"))
+result = int()
+
+if znak == "sqrt":
+    result = sqrt(a)
+    print(a, znak, "=", result)
+elif znak == "!":
+    result = factorial(a)
+    print(a, znak, "=", result)
+
+else:
+    b = int(input("b = ?"))
+    if znak == "+":
+        result = plus(a, b)
+    elif znak == "-":
+        result = minus(a, b)
+    elif znak == "*":
+        result = mult(a, b)
+    elif znak == "/":
+        result = div(a, b)
+    elif znak == "^":
+        result = pow(a, b)  
+    print(a, znak, b, "=", result)
